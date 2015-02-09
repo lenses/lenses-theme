@@ -18,32 +18,51 @@ Lenses theme component
   <template>
     
     <core-style id="lenses">
-      .container {
+      *::shadow .th-container  {
         font-size: {{themeSettings[theme].fontSize}};
         font-family: {{themeSettings[theme].fontFace}};
       }
-      p.info {
+      *::shadow .th-container p.info {
         width: 170px;
+        height: 
       }
 
-      .selector {
+      *::shadow .th-container p.info:hover {
+        display: block;
+      }
+
+
+      *::shadow .th-container .selector {
         min-height: 10px;
         display: inline-block;
         max-height: 123px;
         overflow-y: scroll; 
       }
 
-      .selector .col {
+      *::shadow .th-container .selector .col {
         padding: 1px;
         border: 1px solid #EEE;
       }
-      .selector .core-selected {
+      *::shadow .th-container .selector .core-selected {
         background-color: {{themeSettings[theme].selectedBckColor}};
 
       }
-      .label {
+      *::shadow .th-container .label {
         display: block;
         color: {{themeSettings[theme].titleColor}};
+      }
+
+      *::shadow .th-container input.short-input {
+        border: 1px solid #eee;
+        padding: 3px;
+        width: 5em; 
+      }
+      *::shadow .th-container core-icon-button {
+        margin: 0;
+
+      }
+      *::shadow .th-container .columnName {
+        border-radius: {{themeSettings[theme].borderRadius}};
       }
     </core-style>
     
@@ -57,13 +76,22 @@ Lenses theme component
           fontSize: '12px',
           fontFace: 'arial',
           titleColor: '#2fa3af',
-          selectedBckColor: '#ccc'
+          selectedBckColor: '#ccc',
+          borderRadius: '0px',
         },
         linear: {
-          fontSize: '25px',
-          color: 'green'
+          fontSize: '14px',
+          fontFace: 'arial',
+          titleColor: '#2fa3af',
+          selectedBckColor: '#ccc',
+          borderRadius: '4px',
         }
+      },
+      /*
+      domReady: function() {
+        CoreStyle.g.theme = Themes.lenses;
       }
+      */
       
     });
   </script>
