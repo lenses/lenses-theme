@@ -1,0 +1,10 @@
+{
+  "name": "lenses-theme",
+  "version": "0.0.0",
+  "keywords": "thelma, polymer, web-components",
+  "main": "lenses-theme.html",
+  "dependencies": {  
+    "polymer": "Polymer/polymer#~0.5.1"
+  }
+}
+

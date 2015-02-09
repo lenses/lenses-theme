@@ -1,0 +1,70 @@
+<link rel="import" href="../polymer/polymer.html"> 
+<link rel="import" href="../core-style/core-style.html"> 
+
+<!--
+Lenses theme component
+
+##### Example
+
+    <lenses-theme></lenses-theme>
+
+@element lenses-theme
+@blurb Element providing solution to no problem in particular.
+@status alpha
+@homepage http://lenses.github.io/lenses-theme
+-->
+
+<polymer-element name="lenses-theme" attributes="theme">
+  <template>
+    
+    <core-style id="lenses">
+      .container {
+        font-size: {{themeSettings[theme].fontSize}};
+        font-family: {{themeSettings[theme].fontFace}};
+      }
+      p.info {
+        width: 170px;
+      }
+
+      .selector {
+        min-height: 10px;
+        display: inline-block;
+        max-height: 123px;
+        overflow-y: scroll; 
+      }
+
+      .selector .col {
+        padding: 1px;
+        border: 1px solid #EEE;
+      }
+      .selector .core-selected {
+        background-color: {{themeSettings[theme].selectedBckColor}};
+
+      }
+      .label {
+        display: block;
+        color: {{themeSettings[theme].titleColor}};
+      }
+    </core-style>
+    
+  </template>
+  <script>
+    Polymer({
+      theme: 'connector',
+
+      themeSettings: {
+        connector: {
+          fontSize: '12px',
+          fontFace: 'arial',
+          titleColor: '#2fa3af',
+          selectedBckColor: '#ccc'
+        },
+        linear: {
+          fontSize: '25px',
+          color: 'green'
+        }
+      }
+      
+    });
+  </script>
+</polymer-element>
